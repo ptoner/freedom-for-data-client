@@ -13,7 +13,9 @@ import routes from '../routes';
  * Imports for solidity-storage-service
  */
 import RecordServiceJson from '../truffle/RecordService.json';
-import Freedom from '../freedom-for-data.js';
+import Freedom from 'freedom-for-data';
+
+console.log(Freedom);
 
 
 // console.log(Freedom);
