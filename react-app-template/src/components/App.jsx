@@ -12,13 +12,11 @@ import routes from '../routes';
 /**
  * Imports for solidity-storage-service
  */
-import ipfsClient from '../../node_modules/ipfs-http-client/src/index.js';
 import RecordServiceJson from '../truffle/RecordService.json';
-import TruffleContract from '../../node_modules/truffle-contract';
-import Freedom from '../../node_modules/freedom-for-data';
+import Freedom from '../freedom-for-data.js';
 
 
-
+// console.log(Freedom);
 
 export default function (props) {
 
@@ -65,24 +63,18 @@ export default function (props) {
               /** 
                * Get record contract service
                */
-              const recordService = TruffleContract(RecordServiceJson);
-              recordService.setProvider(window.web3Provider);
-              recordService.defaults({from: account});  
-
-              var recordServiceContract = await recordService.deployed();
-
-  
-              /**
-               * IPFS configuration for tests
-               */
-              var ipfs = ipfsClient({ 
-                host: 'localhost', 
-                port: '5001', 
-                protocol: 'http' 
-              })
+              var freedom = await Freedom(
+                RecordServiceJson, 
+                account, 
+                window.web3Provider,
+                { 
+                  host: 'localhost', 
+                  port: '5001', 
+                  protocol: 'http' 
+                }
+              );
               
-              var freedom = Freedom(recordServiceContract, ipfs);
-              
+              console.log(freedom);
 
               
               /**
