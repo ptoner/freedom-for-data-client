@@ -1,5 +1,5 @@
 # freedom-for-data-examples
-Examples of freedom-for-data implementations. 
+Examples of [freedom-for-data](https://github.com/ptoner/freedom-for-data) implementations. 
 
 ### Clone the freedom-for-data repo and clone this repo
 ```console

@@ -9,16 +9,25 @@ import {
 import routes from '../routes';
 
 
+
+
+
+
+
 /**
- * Imports for solidity-storage-service
+ * Imports for freedom-for-data
  */
 import RecordServiceJson from '../truffle/RecordService.json';
 import Freedom from 'freedom-for-data';
 
-console.log(Freedom);
 
 
-// console.log(Freedom);
+
+
+
+
+
+
 
 export default function (props) {
 
@@ -104,16 +113,6 @@ export default function (props) {
           }
           
         }
-
-
-
-
-
-
-
-       
-
-
       }
     }
   };
