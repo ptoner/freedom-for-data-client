@@ -1,13 +1,14 @@
 import React from 'react';
 import { withStyles } from '@material-ui/core/styles';
 import { SwipeableDrawer, Button, List, Divider, ListItem, ListItemIcon, ListItemText } from '@material-ui/core';
-import InboxIcon from '@material-ui/icons/MoveToInbox';
-import MailIcon from '@material-ui/icons/Mail';
-import MenuIcon from '@material-ui/icons/Menu';
+import { MoveToInbox as InboxIcon, Mail as MailIcon, Menu as MenuIcon } from '@material-ui/icons';
+
+import styles from './SidebarStyles';
 
 class Sidebar extends React.Component {
   state = {
     left: false,
+    sidebarItems: ['Reports', 'Create']
   };
 
   toggleDrawer = (side, open) => () => {
@@ -22,7 +23,7 @@ class Sidebar extends React.Component {
     const sideList = (
       <div className={classes.list}>
         <List>
-          {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
+          {this.state.sidebarItems.map((text, index) => (
             <ListItem button key={text}>
               <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
               <ListItemText primary={text} />
@@ -31,7 +32,7 @@ class Sidebar extends React.Component {
         </List>
         <Divider />
         <List>
-          {['All mail', 'Trash', 'Spam'].map((text, index) => (
+          {['test'].map((text, index) => (
             <ListItem button key={text}>
               <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
               <ListItemText primary={text} />
@@ -64,14 +65,5 @@ class Sidebar extends React.Component {
     );
   }
 }
-
-const styles = {
-  list: {
-    width: 250,
-  },
-  fullList: {
-    width: 'auto',
-  },
-};
 
 export default withStyles(styles)(Sidebar);
