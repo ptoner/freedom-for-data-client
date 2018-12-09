@@ -12,6 +12,9 @@ cd freedom-for-data-examples/react-app-template
 # We need to install freedom-for-data in the /node_modules directory inside react-app-template
 npm install ../../freedom-for-data
 
+# Install other dependencies
+npm install
+
 ```
 
 ### Run app
