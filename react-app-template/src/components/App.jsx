@@ -18,7 +18,7 @@ import routes from '../routes';
  * Imports for freedom-for-data
  */
 import RecordServiceJson from '../truffle/RecordService.json';
-import Freedom from 'freedom-for-data';
+import Freedom from 'freedom-for-data/index.js';
 
 
 
@@ -78,11 +78,7 @@ export default function (props) {
                 RecordServiceJson, 
                 account, 
                 window.web3Provider,
-                { 
-                  host: 'localhost', 
-                  port: '5001', 
-                  protocol: 'http' 
-                }
+                { host: 'localhost', port: '5001' }
               );
               
               console.log(freedom);
@@ -91,10 +87,12 @@ export default function (props) {
               /**
                * Call the create method
                */
-              var result = await freedom.create({
+              var obj = {
                 firstName: 'Andrew',
                 lastName: 'McCutchen'
-              });
+              }
+
+              var result = await freedom.create(obj);
 
               console.log(result);
 

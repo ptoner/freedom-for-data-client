@@ -1,6 +1,9 @@
 # freedom-for-data-examples
 Examples of [freedom-for-data](https://github.com/ptoner/freedom-for-data) implementations. 
 
+
+
+# /react-app-template
 ### Clone the freedom-for-data repo and clone this repo
 ```console
 git clone https://github.com/ptoner/freedom-for-data
@@ -25,9 +28,11 @@ freedom-for-data-examples/react-app-template$ npm start
 ### Create an optimized production build
 ```console
 freedom-for-data-examples/react-app-template$ npm run build
-````
+```
 
-# Freedom For Data Client
+
+
+# /freedom-for-data-client
 
 This is a redo of our client using just CRA and Material-UI for better flexibility and control over our app.
 This is currently WIP and mostly for visual only.

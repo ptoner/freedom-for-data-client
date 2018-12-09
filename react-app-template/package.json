@@ -21,7 +21,6 @@
     "postinstall": "npm run copy-fonts"
   },
   "devDependencies": {
-    "babel-plugin-transform-object-rest-spread": "^6.26.0",
     "cpy-cli": "^2.0.0"
   },
   "browserslist": {
