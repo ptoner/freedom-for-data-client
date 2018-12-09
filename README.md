@@ -26,3 +26,19 @@ freedom-for-data-examples/react-app-template$ npm start
 ```console
 freedom-for-data-examples/react-app-template$ npm run build
 ````
+
+# Freedom For Data Client
+
+This is a redo of our client using just CRA and Material-UI for better flexibility and control over our app.
+This is currently WIP and mostly for visual only.
+
+### How To Run This
+
+Install all the dependencies by running the following.  (You may need to use 'sudo')
+```
+npm install
+```
+
+```
+npm run start
+```
