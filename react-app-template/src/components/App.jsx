@@ -92,14 +92,14 @@ export default function (props) {
                 lastName: 'McCutchen'
               }
 
-              var result = await freedom.create(obj);
+              var result = await freedom.create(1, obj);
 
               console.log(result);
 
               /**
                * Read the result
                */
-              var readResult = await freedom.read(result.id);
+              var readResult = await freedom.read(1, result.id);
 
               console.log(readResult);
             });
