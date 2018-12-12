@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import './App.css';
 import Navbar from './shared/Navbar';
+import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
+import Home from './components/Home.js';
 
 /**
  * Imports for freedom-for-data
@@ -47,7 +49,7 @@ class App extends Component {
             { host: 'localhost', port: '5001' }
           );
 
-          
+
           window.freedom = freedom;
           console.log('freedom-for-data-configured');
 
@@ -66,9 +68,12 @@ class App extends Component {
 
   render() {
     return (
-      <div>
-        <Navbar></Navbar>
-      </div>
+      <Router>
+        <div>
+          <Navbar></Navbar>
+          <Route path="/" exact component={Home} />
+        </div>
+      </Router>
     );
   }
 }
