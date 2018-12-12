@@ -20,6 +20,7 @@ import {
 
 import NewRecordForm from '../NewRecordForm.jsx';
 
+
 export default () => (
   <Page>
     <Navbar>

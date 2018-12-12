@@ -24,11 +24,6 @@ import Freedom from 'freedom-for-data/index.js';
 
 
 
-
-
-
-
-
 export default function (props) {
 
   // Framework7 parameters here
@@ -40,10 +35,10 @@ export default function (props) {
     routes,
 
     on: {
-      init: async function() {
+      init: async function () {
 
         console.log("App init");
-        
+
 
         // Modern dapp browsers...
         if (window.ethereum) {
@@ -62,12 +57,12 @@ export default function (props) {
             /**
              * Load first account. Now we can initialize all our stuff.
              */
-            window.web3.eth.getAccounts(async function(error, accounts) {
+            await window.web3.eth.getAccounts(async function (error, accounts) {
 
               if (error) {
                 console.log(error);
               }
-            
+
               var account = accounts[0];
 
 
@@ -75,33 +70,16 @@ export default function (props) {
                * Get record contract service
                */
               var freedom = await Freedom(
-                RecordServiceJson, 
-                account, 
+                RecordServiceJson,
+                account,
                 window.web3Provider,
                 { host: 'localhost', port: '5001' }
               );
-              
-              console.log(freedom);
 
               
-              /**
-               * Call the create method
-               */
-              var obj = {
-                firstName: 'Andrew',
-                lastName: 'McCutchen'
-              }
+              window.freedom = freedom;
+              console.log('freedom-for-data-configured');
 
-              var result = await freedom.create(1, obj);
-
-              console.log(result);
-
-              /**
-               * Read the result
-               */
-              var readResult = await freedom.read(1, result.id);
-
-              console.log(readResult);
             });
 
 
@@ -109,7 +87,7 @@ export default function (props) {
             // User denied account access...
             console.error("User denied account access")
           }
-          
+
         }
       }
     }
@@ -127,11 +105,11 @@ export default function (props) {
 
       {/* Right Panel */}
       <Panel right reveal themeDark>
-        <View url="/panel-right/"/>
+        <View url="/panel-right/" />
       </Panel>
 
       {/* Main View */}
-      <View id="main-view" url="/" main className="ios-edges"/>
+      <View id="main-view" url="/" main className="ios-edges" />
 
       {/* Popup */}
       {/* <Popup id="popup">
