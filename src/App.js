@@ -63,7 +63,7 @@ class App extends Component {
             freedom: freedom
           });
 
-          console.log('freedom-for-data-configured');
+          console.log('App.js: freedom-for-data-configured');
 
         });
 

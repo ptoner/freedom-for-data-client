@@ -7,7 +7,7 @@ class Home extends Component {
     componentDidMount() {
 
         // check this out.
-        console.log('props: ', this.props.freedom);
+        console.log('Home.js: props: ', this.props.freedom);
     }
 
     render() {
