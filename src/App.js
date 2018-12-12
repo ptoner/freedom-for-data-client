@@ -6,7 +6,6 @@ import Navbar from './shared/Navbar';
 /**
  * Imports for freedom-for-data
  */
-import RecordServiceJson from './truffle/RecordService.json';
 import Freedom from 'freedom-for-data/index.js';
 
 
@@ -43,7 +42,6 @@ class App extends Component {
            * Get record contract service
            */
           var freedom = await Freedom(
-            RecordServiceJson,
             account,
             window.web3Provider,
             { host: 'localhost', port: '5001' }
