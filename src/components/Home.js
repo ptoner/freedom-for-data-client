@@ -3,15 +3,26 @@ import React, { Component } from 'react';
 
 
 class Home extends Component {
-    
+
     componentDidMount() {
-        console.log(window.freedom);
+
+        // check this out.
+        console.log('props: ', this.props.freedom);
     }
 
     render() {
-      return (
-        <div></div>
-      );
+
+        if(!this.props.freedom) {
+            return (
+              <div>Just a beautiful loading screen......</div>
+            )
+        } else {
+            return (
+                <div></div>
+              );
+        }
+
+
     }
   }
   

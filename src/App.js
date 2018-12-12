@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import Navbar from './shared/Navbar';
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Route } from "react-router-dom";
 
 import Home from './components/Home.js';
 
@@ -13,7 +13,16 @@ import Freedom from 'freedom-for-data/index.js';
 
 class App extends Component {
 
+  constructor(props) {
+    super(props);
+    this.state = {
+      freedom: ''
+    }
+  }
+
   async componentDidMount() {
+
+    const self = this;
 
     if (window.ethereum) {
 
@@ -50,7 +59,10 @@ class App extends Component {
           );
 
 
-          window.freedom = freedom;
+          self.setState({
+            freedom: freedom
+          });
+
           console.log('freedom-for-data-configured');
 
         });
@@ -69,6 +81,7 @@ class App extends Component {
   render() {
     return (
       <Router>
+
         <div>
           <Navbar></Navbar>
           <Route path="/" exact component={Home} />
