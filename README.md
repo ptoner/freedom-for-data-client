@@ -3,7 +3,7 @@ Examples of [freedom-for-data](https://github.com/ptoner/freedom-for-data) imple
 
 
 
-# /freedom-for-data-client - A basic React CRUD app
+# A Basic React CRUD app
 ### Clone the freedom-for-data repo and clone this repo
 ```console
 git clone https://github.com/ptoner/freedom-for-data
