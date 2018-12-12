@@ -1,9 +1,4 @@
-# freedom-for-data-examples
-Examples of [freedom-for-data](https://github.com/ptoner/freedom-for-data) implementations. 
-
-
-
-# A Basic React CRUD app
+# A Basic React CRUD App Using [freedom-for-data](https://github.com/ptoner/freedom-for-data)
 ### Clone the freedom-for-data repo and clone this repo
 ```console
 git clone https://github.com/ptoner/freedom-for-data
