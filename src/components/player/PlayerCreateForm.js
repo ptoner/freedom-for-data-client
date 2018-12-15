@@ -33,6 +33,7 @@ class PlayerCreateForm extends Component {
 
 
     async handleSubmit(event){
+        event.preventDefault();
 
         const player = {
             firstName: this.state.firstName,
@@ -41,8 +42,9 @@ class PlayerCreateForm extends Component {
 
         let result = await this.props.freedom.create(PLAYER_REPO, player);
 
-        console.log(result);
-        event.preventDefault();
+
+        window.location.href = "/";
+        
 
     }
 
@@ -55,16 +57,10 @@ class PlayerCreateForm extends Component {
         return (
 
 
-            <form>
-                <TextField he value={this.state.firstName} onChange={this.handleFirstName}/>
-                <TextField value={this.state.lastName} onChange={this.lastName}/>
- 
-                <Button
-                    label="Submit"
-                    type='submit'
-                    onClick={e => this.handleSubmit(e)}
-                />
-
+            <form onSubmit={this.handleSubmit}>
+                <TextField value={this.state.firstName} onChange={this.handleFirstName}/>
+                <TextField value={this.state.lastName} onChange={this.handleLastName}/>
+                <input type="submit" value="blah"/>
             </form>
 
 
