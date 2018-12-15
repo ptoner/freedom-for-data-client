@@ -4,11 +4,14 @@ import Navbar from './shared/Navbar';
 import { BrowserRouter as Router, Route } from "react-router-dom";
 
 import Home from './components/Home.js';
+import PlayerCreateForm from './components/player/PlayerCreateForm.js';
 
 /**
  * Imports for freedom-for-data
  */
 import Freedom from 'freedom-for-data/index.js';
+
+
 
 
 class App extends Component {
@@ -21,6 +24,10 @@ class App extends Component {
   }
 
   async componentDidMount() {
+    await this._initializeFreedom();
+  }
+
+  async _initializeFreedom() {
 
     const self = this;
 
@@ -74,8 +81,6 @@ class App extends Component {
       }
 
     }
-
-
   }
 
   render() {
@@ -84,7 +89,8 @@ class App extends Component {
 
         <div>
           <Navbar></Navbar>
-          <Route path="/" exact component={Home} />
+          <Route path="/" exact component={() => <Home freedom={this.state.freedom} />} />
+          <Route path="/player/create" exact component={() => <PlayerCreateForm freedom={this.state.freedom} />} />
         </div>
       </Router>
     );
