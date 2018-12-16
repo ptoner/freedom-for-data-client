@@ -1,6 +1,10 @@
 import React, { Component } from 'react';
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
+import Card from '@material-ui/core/Card';
+import CardHeader from '@material-ui/core/CardHeader';
+import CardContent from '@material-ui/core/CardContent';
+import CardActions from '@material-ui/core/CardActions';
 
 //Putting this here for now
 const PLAYER_REPO = 1;
@@ -55,34 +59,23 @@ class PlayerCreateForm extends Component {
         if (!this.props.freedom) { return (<div>Loading...</div>) }
 
         return (
-
-
             <form onSubmit={this.handleSubmit}>
-                <TextField value={this.state.firstName} onChange={this.handleFirstName}/>
-                <TextField value={this.state.lastName} onChange={this.handleLastName}/>
-                <input type="submit" value="blah"/>
+                <Card>
+                    <CardHeader 
+                        title="Create Player" 
+                    />
+                    <CardContent>
+                        
+                            <TextField label="First Name" value={this.state.firstName} onChange={this.handleFirstName}/> <br />
+                            <TextField label="Last Name" value={this.state.lastName} onChange={this.handleLastName}/> <br />
+                            
+                        
+                    </CardContent>
+                    <CardActions>
+                        <Button variant="contained" color="secondary" type="submit">Save Player</Button>
+                    </CardActions>
+                </Card>
             </form>
-
-
-
-
-
-
-
-
-            // <form onSubmit={this.handleSubmit}>
-            //     <label>
-            //         First Name:
-            //     </label>
-            //     <input type="text" value={this.state.firstName} onChange={this.handleFirstName} />
-
-            //     <label>
-            //         Last Name:
-            //     </label>
-            //     <input type="text" value={this.state.lastName} onChange={this.handleLastName} />
-
-                
-            // </form>
         );
     }
 }
