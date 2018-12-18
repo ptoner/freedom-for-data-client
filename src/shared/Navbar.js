@@ -89,7 +89,7 @@ class Navbar extends Component {
           <Toolbar>
             <Sidebar></Sidebar>
             <Typography className={classes.title} variant="h6" color="inherit" noWrap>
-              FREEDOM FOR DATA
+              <a href="/">FREEDOM FOR DATA</a>
             </Typography>
             <div className={classes.search}>
               <div className={classes.searchIcon}>
@@ -105,7 +105,7 @@ class Navbar extends Component {
             </div>
             <div className={classes.grow} />
             <div className={classes.sectionDesktop}>
-              <IconButton color="inherit">
+              {/* <IconButton color="inherit">
                 <Badge badgeContent={1} color="secondary">
                   <MailIcon />
                 </Badge>
@@ -121,7 +121,7 @@ class Navbar extends Component {
                 onClick={this.handleProfileMenuOpen}
                 color="inherit">
                 <AccountCircle />
-              </IconButton>
+              </IconButton> */}
             </div>
             <div className={classes.sectionMobile}>
               <IconButton aria-haspopup="true" onClick={this.handleMobileMenuOpen} color="inherit">

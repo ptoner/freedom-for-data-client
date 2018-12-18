@@ -15,11 +15,15 @@ class PlayerCreateForm extends Component {
         super(props);
         this.state = {
             firstName: '',
-            lastName: ''
+            lastName: '',
+            position: '',
+            description: ''
         };
 
         this.handleFirstName = this.handleFirstName.bind(this);
         this.handleLastName = this.handleLastName.bind(this);
+        this.handlePosition = this.handlePosition.bind(this);
+        this.handleDescription = this.handleDescription.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
     }
 
@@ -35,13 +39,28 @@ class PlayerCreateForm extends Component {
         });
     }
 
+    handlePosition(event) {
+        this.setState({
+            position: event.target.value
+        });
+    }
+
+    handleDescription(event) {
+        this.setState({
+            description: event.target.value
+        });
+    }
+
+
 
     async handleSubmit(event){
         event.preventDefault();
 
         const player = {
             firstName: this.state.firstName,
-            lastName: this.state.lastName
+            lastName: this.state.lastName,
+            position: this.state.position,
+            description: this.state.description
         }
 
         let result = await this.props.freedom.create(PLAYER_REPO, player);
