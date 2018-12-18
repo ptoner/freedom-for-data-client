@@ -16,12 +16,13 @@ class Home extends Component {
 
     constructor(props) {
         super(props);
+        
         this.state = {
             count: 0,
             limit: 10,
             page: 0
         };
-
+   
         this.handleChangePage = this.handleChangePage.bind(this);
         this.handleChangeLimit = this.handleChangeLimit.bind(this);
     }
@@ -39,7 +40,7 @@ class Home extends Component {
 
         console.log(`count ${count}`);
 
-        await this._fetchPage(this.state.page);
+        await this._fetchPage(this.state.page, this.state.limit);
         
     }
 
@@ -51,27 +52,32 @@ class Home extends Component {
             page: page
         });
 
-        await this._fetchPage(page);
+        await this._fetchPage(page, this.state.limit);
 
     }
 
-    handleChangeLimit(event) {
+    async handleChangeLimit(event) {
+        
+        const limit = event.target.value;
+
         this.setState({ 
-            limit: event.target.value 
+            limit: limit 
         });
+
+        await this._fetchPage(this.state.page, limit);
     };
 
-    async _fetchPage(page) {
+    async _fetchPage(page, limit) {
 
         console.log("_fetchPage");
 
         if (this.state.count === 0) return;
         
-        const offset = page * this.state.limit;
+        const offset = page * limit;
 
-        console.log(`Limit: ${this.state.limit}, Offset: ${offset}, Page: ${page}`);
+        console.log(`Limit: ${limit}, Offset: ${offset}, Page: ${page}`);
 
-        let players = await this.props.freedom.readList(PLAYER_REPO, this.state.limit, offset);
+        let players = await this.props.freedom.readList(PLAYER_REPO, limit, offset);
 
         this.setState({
             players: players
