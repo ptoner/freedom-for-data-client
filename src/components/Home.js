@@ -38,7 +38,7 @@ class Home extends Component {
             count: count
         });
 
-        console.log(`count ${count}`);
+        // console.log(`count ${count}`);
 
         await this._fetchPage(this.state.page, this.state.limit);
         
