@@ -8,6 +8,7 @@ import CardHeader from '@material-ui/core/CardHeader';
 import CardContent from '@material-ui/core/CardContent';
 import CardActions from '@material-ui/core/CardActions';
 import TablePagination from '@material-ui/core/TablePagination';
+import { Link } from 'react-router-dom'
 
 //Putting this here for now
 const PLAYER_REPO = 1;
@@ -88,8 +89,7 @@ class Home extends Component {
         if (!this.state || !this.state.players) return;
 
         return this.state.players.map((player) =>
-
-            <ListItem button key={player.id} >
+            <ListItem button key={player.id} to={'/player/show/' + player.id} component={Link} >
                 <ListItemText primary={player.firstName + ' ' + player.lastName} />
             </ListItem>
         )

@@ -16,11 +16,6 @@ import buffer from 'buffer';
 const PLAYER_REPO = 1;
 
 
-
-
-
-
-
 class PlayerCreateForm extends Component {
 
     constructor(props) {

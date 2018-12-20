@@ -5,6 +5,7 @@ import { BrowserRouter as Router, Route } from "react-router-dom";
 
 import Home from './components/Home.js';
 import PlayerCreateForm from './components/player/PlayerCreateForm.js';
+import PlayerShow from './components/player/PlayerShow.js';
 
 /**
  * Imports for freedom-for-data
@@ -91,6 +92,7 @@ class App extends Component {
           <Navbar></Navbar>
           <Route path="/" exact component={() => <Home freedom={this.state.freedom} />} />
           <Route path="/player/create" exact component={() => <PlayerCreateForm freedom={this.state.freedom} />} />
+          <Route path="/player/show/:playerId" exact component={() => <PlayerShow freedom={this.state.freedom} />} />
         </div>
       </Router>
     );
