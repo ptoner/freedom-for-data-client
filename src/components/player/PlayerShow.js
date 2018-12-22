@@ -43,6 +43,8 @@ class PlayerShow extends Component {
 
     render() {
 
+        console.log(this.props);
+
         //Won't be set the first time it loads.
         if (!this.props.freedom) { return (<div>Loading...</div>) }
 

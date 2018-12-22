@@ -47,7 +47,7 @@ class Home extends Component {
 
     async handleChangePage(event, page) {
 
-        console.log(`handleChangePage: ${page}`);
+        // console.log(`handleChangePage: ${page}`);
 
         this.setState({ 
             page: page
@@ -70,13 +70,13 @@ class Home extends Component {
 
     async _fetchPage(page, limit) {
 
-        console.log("_fetchPage");
+        // console.log("_fetchPage");
 
         if (this.state.count === 0) return;
         
         const offset = page * limit;
 
-        console.log(`Limit: ${limit}, Offset: ${offset}, Page: ${page}`);
+        // console.log(`Limit: ${limit}, Offset: ${offset}, Page: ${page}`);
 
         let players = await this.props.freedom.readList(PLAYER_REPO, limit, offset);
 
@@ -90,6 +90,7 @@ class Home extends Component {
 
         return this.state.players.map((player) =>
             <ListItem button key={player.id} to={'/player/show/' + player.id} component={Link} >
+                <Avatar alt="Remy Sharp" src="/static/images/remy.jpg" />
                 <ListItemText primary={player.firstName + ' ' + player.lastName} />
             </ListItem>
         )

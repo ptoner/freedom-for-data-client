@@ -4,7 +4,7 @@ import { withStyles } from '@material-ui/core/styles';
 import { Search as SearchIcon, AccountCircle, Mail as MailIcon, Notifications as NotificationsIcon, MoreVert as MoreIcon } from '@material-ui/icons';
 
 import styles from './NavbarStyles';
-import Sidebar from './Sidebar'; 
+
 
 class Navbar extends Component {
   state = {
@@ -87,7 +87,6 @@ class Navbar extends Component {
       <div className={classes.root}>
         <AppBar position="static">
           <Toolbar>
-            <Sidebar></Sidebar>
             <Typography className={classes.title} variant="h6" color="inherit" noWrap>
               <a href="/">FREEDOM FOR DATA</a>
             </Typography>
